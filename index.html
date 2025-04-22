@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea: Regresión y Árbol de Decisión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    h1, h2 {
+      color: #004080;
+    }
+    img {
+      max-width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    pre {
+      background-color: #eef;
+      padding: 15px;
+      border-left: 4px solid #004080;
+      overflow-x: auto;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tarea: Regresión y Árbol de Decisión</h1>
+
+    <h2>Parte 1: Regresión con datos del INE</h2>
+    <p>
+      Se utilizaron datos del INE de Guatemala sobre la población entre los años 2000 y 2023.
+      Se aplicó una regresión polinomial de grado 2 para analizar la tendencia creciente de la población.
+    </p>
+    <img src="grafica_word.png" alt="Gráfica de regresión poblacional">
+
+    <h2>Parte 2: Clasificación con Árbol de Decisión</h2>
+    <p>
+      Con un conjunto de 12 ejemplos y utilizando los atributos <strong>Bar</strong>, <strong>Pat</strong> y <strong>Rain</strong>,
+      se construyó un árbol de decisión que logra una precisión del 100% al predecir si una persona esperará o no.
+    </p>
+
+    <p><strong>Árbol generado:</strong></p>
+    <pre>
+|--- Pat <= 1.50
+|   |--- Pat <= 0.50
+|   |   |--- Bar <= 0.50
+|   |   |   |--- Rain <= 0.50
+|   |   |   |   |--- class: 0
+|   |   |   |--- Rain >  0.50
+|   |   |   |   |--- class: 1
+|   |   |--- Bar >  0.50
+|   |   |   |--- Rain <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- Rain >  0.50
+|   |   |   |   |--- class: 0
+|   |--- Pat >  0.50
+|   |   |--- class: 0
+|--- Pat >  1.50
+|   |--- class: 1
+    </pre>
+
+    <p><strong>Accuracy Score:</strong> 100%</p>
+  </div>
+</body>
+</html>
